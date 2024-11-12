@@ -80,16 +80,7 @@ public class TarefaController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
     }
-
-  /*  @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTarefa(@PathVariable Integer id) {
-        Tarefa tarefa = tarefaRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada"));
-        tarefaService.excluirTarefa(id);
-        return ResponseEntity.noContent().build();  // Retorna 204 No Content, indicando sucesso
-    }*/
-
-
+    
     @GetMapping("/atrasados")
     public List<Tarefa> listarAtrasadas() {
         return tarefaService.listarAtrasados();
